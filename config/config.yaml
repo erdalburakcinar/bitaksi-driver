@@ -1,0 +1,13 @@
+ports:
+  http: 8080
+
+server:
+  api_key: 8f05c3a1-9de0-4f26-b54f-7400133c92c7
+
+mongodb:
+  username: admin
+  password: admin
+  host: localhost
+  port: 27017
+  database: bitaksi
+  collection: drivers

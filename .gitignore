@@ -1,0 +1,48 @@
+# Binaries
+*.exe
+*.dll
+*.so
+*.dylib
+*.a
+*.out
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDEs and Editors
+.idea/
+.vscode/
+*.swp
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
+*.old
+
+# Test binary and results
+*.test
+*.prof
+
+# Go build artifacts
+bin/
+dist/
+
+# Dependency directories
+vendor/
+
+# Go module files
+go.sum
+
+# Docker
+.dockerignore
+docker-compose.override.yml
+
+# Swagger generated files
+docs/swagger.json
+docs/swagger.yaml
+
+# Git
+*.patch
+*.diff
