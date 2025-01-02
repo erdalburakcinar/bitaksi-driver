@@ -63,7 +63,7 @@ func main() {
 // startServer starts the HTTP server and handles graceful shutdown
 func startServer(router http.Handler, cfg *config.Config) {
 	// Create HTTP server
-	address := fmt.Sprintf(":%d", cfg.Ports.HTTP)
+	address := fmt.Sprintf("%s", cfg.Server.Port)
 	server := &http.Server{
 		Addr:    address,
 		Handler: router,

@@ -1,13 +1,11 @@
-ports:
-  http: 8080
-
 server:
   api_key: 8f05c3a1-9de0-4f26-b54f-7400133c92c7
+  port: ":8080"
 
 mongodb:
   username: admin
   password: admin
-  host: localhost
+  host: mongodb  # Docker service name
   port: 27017
   database: bitaksi
   collection: drivers

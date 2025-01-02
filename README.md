@@ -1,34 +1,66 @@
 # Driver Service
 
-## Overview
-
-The Driver Service is a backend service built using Go, MongoDB, and the Gorilla Mux framework. It provides APIs to manage driver locations, search for nearby drivers, and handle geospatial queries with MongoDB.
+Driver Service is a microservice responsible for managing driver locations and providing APIs to search for the nearest drivers. It interacts with MongoDB for data storage and supports Docker and Docker Compose for containerization and orchestration.
 
 ---
 
 ## Features
 
-- **Import Driver Locations**: Bulk upload of driver locations from a CSV file.
-- **Search Nearby Drivers**: Find the nearest drivers within a specified radius from a given location.
-- **Geospatial Indexing**: Automatically ensures geospatial indexing for MongoDB collections.
+- **Swagger Documentation**: Interactive API documentation.
+- **Dockerized**: Fully containerized for deployment.
+- **Authentication**: Secured endpoints with API keys.
 
 ---
 
-## Prerequisites
+## Requirements
 
-- **Go**: Version 1.20 or higher
-- **Docker**: Installed and running
-- **MongoDB**: Accessible instance for database operations
+- [Go](https://golang.org/doc/install) 1.23
+- [Docker](https://docs.docker.com/get-docker/)
+- [Docker Compose](https://docs.docker.com/compose/install/)
+- MongoDB (containerized via Docker Compose)
 
 ---
 
-## Getting Started
+## Setup
 
-Run with Docker
+### Build the Application
+```bash
+make build
+```
+Run the Application Locally
 
-Build and Run the Service
-make docker-build
-make docker-run
+```bash
+make run
+```
 
-The service will be accessible at:
-http://localhost:8080
+Run Tests
+
+```bash
+make test
+```
+
+Docker Setup
+
+Use Docker Compose
+```bash
+make docker-compose-up
+```
+
+Stop All Services
+
+```bash	
+make docker-compose-down
+```
+API Documentation
+
+Driver Service includes Swagger for API documentation. After running the service, visit the following URL in your browser:
+
+http://localhost:8080/swagger/index.html
+
+This provides an interactive interface to test and explore all available endpoints.
+
+Example Usage with Swagger
+	1.	Open your browser and navigate to http://localhost:8080/swagger/index.html.
+	2.	Authenticate using your API key if required.
+	3.	Explore the endpoints, test API calls, and view detailed response structures.
+

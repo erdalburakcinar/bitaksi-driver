@@ -1,22 +1,31 @@
-version: '3.9'
+version: "3.9"
 
 services:
-  app:
+  driver-service:
     build:
       context: .
       dockerfile: Dockerfile
     ports:
       - "8080:8080"
     environment:
-      - MONGODB_URI=mongodb://admin:admin@mongo:27017
+      - MONGODB_URI=mongodb://admin:admin@mongodb:27017/bitaksi
     depends_on:
-      - mongo
+      - mongodb
+    networks:
+      - shared-net
 
-  mongo:
+  mongodb:
     image: mongo:6.0
     container_name: mongodb
     ports:
       - "27017:27017"
     environment:
-      MONGO_INITDB_ROOT_USERNAME: admin
-      MONGO_INITDB_ROOT_PASSWORD: admin
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=admin
+    networks:
+      - shared-net
+
+networks:
+  shared-net:
+    external: true
+    name: my-shared-network  # Must match the network name you created

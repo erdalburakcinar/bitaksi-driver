@@ -7,11 +7,9 @@ import (
 )
 
 type Config struct {
-	Ports struct {
-		HTTP int `mapstructure:"http"`
-	} `mapstructure:"ports"`
 	Server struct {
 		APIKey string `mapstructure:"api_key"`
+		Port   string `mapstructure:"port"`
 	} `mapstructure:"server"`
 	MongoDB struct {
 		Username   string `mapstructure:"username"`

@@ -24,8 +24,25 @@ func TestSetupRouter(t *testing.T) {
 	cfg := &config.Config{
 		Server: struct {
 			APIKey string `mapstructure:"api_key"`
+			Port   string `mapstructure:"port"`
 		}{
 			APIKey: "test-api-key",
+			Port:   "8080",
+		},
+		MongoDB: struct {
+			Username   string `mapstructure:"username"`
+			Password   string `mapstructure:"password"`
+			Host       string `mapstructure:"host"`
+			Port       int    `mapstructure:"port"`
+			Database   string `mapstructure:"database"`
+			Collection string `mapstructure:"collection"`
+		}{
+			Username:   "mongoUser",
+			Password:   "securePassword",
+			Host:       "localhost",
+			Port:       27017,
+			Database:   "exampleDB",
+			Collection: "exampleCollection",
 		},
 	}
 
